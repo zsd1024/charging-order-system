@@ -29,7 +29,7 @@ public class ChargingOrderController {
             @RequestParam String chargingPileId,
             @RequestParam PaymentType paymentType) {
 
-        System.out.println("【监控日志】收到下单请求，用户ID: \" + userId");
+        System.out.println("Pro日志】收到下单请求，用户ID: \" + userId");
 
         ChargingOrder order = chargingOrderService.createOrder(userId, chargingPileId, paymentType);
         return ResponseEntity.ok(order);
