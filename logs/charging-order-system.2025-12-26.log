@@ -1,0 +1,206 @@
+2025-12-26 02:51:14.832 [main] INFO  c.c.order.ChargingOrderServiceTest - Starting ChargingOrderServiceTest using Java 1.8.0_282 on kaiji.local with PID 76830 (started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 02:51:14.832 [main] DEBUG c.c.order.ChargingOrderServiceTest - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 02:51:14.833 [main] INFO  c.c.order.ChargingOrderServiceTest - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 02:51:15.548 [main] INFO  c.c.order.ChargingOrderServiceTest - Started ChargingOrderServiceTest in 0.883 seconds (JVM running for 1.387)
+2025-12-26 02:51:15.711 [main] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: 9233362f-8c5b-444f-81b7-34775475221b
+2025-12-26 02:51:15.716 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - PrePaid state machine [CHARGING_PREPAID] initialized
+2025-12-26 02:51:15.717 [main] DEBUG c.c.o.d.strategy.PrePaidStrategy - Checking payment condition for order: 9233362f-8c5b-444f-81b7-34775475221b
+2025-12-26 02:51:15.717 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [9233362f-8c5b-444f-81b7-34775475221b] payment completed: CREATED -> PAID on event PAY
+2025-12-26 02:51:15.717 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event PAY for order 9233362f-8c5b-444f-81b7-34775475221b: CREATED -> PAID
+2025-12-26 02:51:15.717 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 9233362f-8c5b-444f-81b7-34775475221b paid with amount: 100.00
+2025-12-26 02:51:15.717 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [9233362f-8c5b-444f-81b7-34775475221b] charging started: PAID -> CHARGING on event START_CHARGING
+2025-12-26 02:51:15.717 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event START_CHARGING for order 9233362f-8c5b-444f-81b7-34775475221b: PAID -> CHARGING
+2025-12-26 02:51:15.717 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 9233362f-8c5b-444f-81b7-34775475221b started charging
+2025-12-26 02:51:15.718 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [9233362f-8c5b-444f-81b7-34775475221b] charging finished: CHARGING -> COMPLETED on event FINISH_CHARGING. Amount: 50.5 kWh
+2025-12-26 02:51:15.718 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event FINISH_CHARGING for order 9233362f-8c5b-444f-81b7-34775475221b: CHARGING -> COMPLETED
+2025-12-26 02:51:15.718 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 9233362f-8c5b-444f-81b7-34775475221b finished charging. Amount: 50.5 kWh, Cost: 60.00
+2025-12-26 02:51:15.718 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [9233362f-8c5b-444f-81b7-34775475221b] settlement completed: COMPLETED -> CLOSED on event SETTLE. Refund: 40.00
+2025-12-26 02:51:15.718 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event SETTLE for order 9233362f-8c5b-444f-81b7-34775475221b: COMPLETED -> CLOSED
+2025-12-26 02:51:15.718 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 9233362f-8c5b-444f-81b7-34775475221b settled. Refund amount: 40.00
+2025-12-26 02:56:55.660 [main] INFO  c.c.order.ChargingOrderServiceTest - Starting ChargingOrderServiceTest using Java 1.8.0_282 on kaiji.local with PID 77073 (started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 02:56:55.660 [main] DEBUG c.c.order.ChargingOrderServiceTest - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 02:56:55.660 [main] INFO  c.c.order.ChargingOrderServiceTest - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 02:56:56.433 [main] INFO  c.c.order.ChargingOrderServiceTest - Started ChargingOrderServiceTest in 0.981 seconds (JVM running for 1.722)
+2025-12-26 02:56:56.619 [main] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: c2336695-90f8-457a-b4c9-1f291c6a2240
+2025-12-26 02:57:06.155 [main] INFO  c.c.o.a.service.ChargingOrderService - Created POST_PAID order: aac9b4ef-3dc3-4a82-9a16-fda1c62cf038
+2025-12-26 02:57:06.176 [main] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: b1c86b2d-2284-420d-a42a-0c7dd6176f2c
+2025-12-26 02:57:06.190 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - PrePaid state machine [CHARGING_PREPAID] initialized
+2025-12-26 02:57:06.190 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [b1c86b2d-2284-420d-a42a-0c7dd6176f2c] cancelled: CREATED -> CANCELLED on event CANCEL_ORDER
+2025-12-26 02:57:06.190 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event CANCEL_ORDER for order b1c86b2d-2284-420d-a42a-0c7dd6176f2c: CREATED -> CANCELLED
+2025-12-26 02:57:06.190 [main] INFO  c.c.o.a.service.ChargingOrderService - Order b1c86b2d-2284-420d-a42a-0c7dd6176f2c cancelled
+2025-12-26 02:57:06.197 [main] INFO  c.c.o.a.service.ChargingOrderService - Created POST_PAID order: cc2f0723-c254-466b-9fc2-d06763c143dd
+2025-12-26 02:57:06.198 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - PostPaid state machine [CHARGING_POSTPAID] initialized
+2025-12-26 02:57:06.198 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [cc2f0723-c254-466b-9fc2-d06763c143dd] cancelled: CREATED -> CANCELLED on event CANCEL_ORDER
+2025-12-26 02:57:06.198 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event CANCEL_ORDER for order cc2f0723-c254-466b-9fc2-d06763c143dd: CREATED -> CANCELLED
+2025-12-26 02:57:06.199 [main] INFO  c.c.o.a.service.ChargingOrderService - Order cc2f0723-c254-466b-9fc2-d06763c143dd cancelled
+2025-12-26 02:57:06.202 [main] INFO  c.c.o.a.service.ChargingOrderService - Created POST_PAID order: a7c93fd6-a074-4b8b-a0e6-7366159f05a9
+2025-12-26 02:57:06.203 [main] DEBUG c.c.o.d.strategy.PostPaidStrategy - Checking authorization condition for order: a7c93fd6-a074-4b8b-a0e6-7366159f05a9
+2025-12-26 02:57:06.203 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [a7c93fd6-a074-4b8b-a0e6-7366159f05a9] authorization completed: CREATED -> AUTHORIZED on event AUTHORIZE
+2025-12-26 02:57:06.203 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event AUTHORIZE for order a7c93fd6-a074-4b8b-a0e6-7366159f05a9: CREATED -> AUTHORIZED
+2025-12-26 02:57:06.203 [main] INFO  c.c.o.a.service.ChargingOrderService - Order a7c93fd6-a074-4b8b-a0e6-7366159f05a9 authorized
+2025-12-26 02:57:06.203 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [a7c93fd6-a074-4b8b-a0e6-7366159f05a9] charging started: AUTHORIZED -> CHARGING on event START_CHARGING
+2025-12-26 02:57:06.204 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event START_CHARGING for order a7c93fd6-a074-4b8b-a0e6-7366159f05a9: AUTHORIZED -> CHARGING
+2025-12-26 02:57:06.204 [main] INFO  c.c.o.a.service.ChargingOrderService - Order a7c93fd6-a074-4b8b-a0e6-7366159f05a9 started charging
+2025-12-26 02:57:06.204 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [a7c93fd6-a074-4b8b-a0e6-7366159f05a9] charging finished: CHARGING -> COMPLETED on event FINISH_CHARGING. Amount: 45.8 kWh
+2025-12-26 02:57:06.204 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event FINISH_CHARGING for order a7c93fd6-a074-4b8b-a0e6-7366159f05a9: CHARGING -> COMPLETED
+2025-12-26 02:57:06.204 [main] INFO  c.c.o.a.service.ChargingOrderService - Order a7c93fd6-a074-4b8b-a0e6-7366159f05a9 finished charging. Amount: 45.8 kWh, Cost: 55.00
+2025-12-26 02:57:06.204 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [a7c93fd6-a074-4b8b-a0e6-7366159f05a9] deduction completed: COMPLETED -> CLOSED on event DEDUCT. Amount: 55.00
+2025-12-26 02:57:06.204 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event DEDUCT for order a7c93fd6-a074-4b8b-a0e6-7366159f05a9: COMPLETED -> CLOSED
+2025-12-26 02:57:06.204 [main] INFO  c.c.o.a.service.ChargingOrderService - Order a7c93fd6-a074-4b8b-a0e6-7366159f05a9 deducted. Amount: 55.00
+2025-12-26 02:57:06.207 [main] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: ed3d2e19-c45d-46be-895a-7cd378bc278e
+2025-12-26 02:57:06.207 [main] DEBUG c.c.o.d.strategy.PrePaidStrategy - Checking payment condition for order: ed3d2e19-c45d-46be-895a-7cd378bc278e
+2025-12-26 02:57:06.207 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [ed3d2e19-c45d-46be-895a-7cd378bc278e] payment completed: CREATED -> PAID on event PAY
+2025-12-26 02:57:06.207 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event PAY for order ed3d2e19-c45d-46be-895a-7cd378bc278e: CREATED -> PAID
+2025-12-26 02:57:06.207 [main] INFO  c.c.o.a.service.ChargingOrderService - Order ed3d2e19-c45d-46be-895a-7cd378bc278e paid with amount: 100.00
+2025-12-26 02:57:06.207 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [ed3d2e19-c45d-46be-895a-7cd378bc278e] charging started: PAID -> CHARGING on event START_CHARGING
+2025-12-26 02:57:06.207 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event START_CHARGING for order ed3d2e19-c45d-46be-895a-7cd378bc278e: PAID -> CHARGING
+2025-12-26 02:57:06.207 [main] INFO  c.c.o.a.service.ChargingOrderService - Order ed3d2e19-c45d-46be-895a-7cd378bc278e started charging
+2025-12-26 02:57:06.207 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [ed3d2e19-c45d-46be-895a-7cd378bc278e] charging finished: CHARGING -> COMPLETED on event FINISH_CHARGING. Amount: 50.5 kWh
+2025-12-26 02:57:06.207 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event FINISH_CHARGING for order ed3d2e19-c45d-46be-895a-7cd378bc278e: CHARGING -> COMPLETED
+2025-12-26 02:57:06.208 [main] INFO  c.c.o.a.service.ChargingOrderService - Order ed3d2e19-c45d-46be-895a-7cd378bc278e finished charging. Amount: 50.5 kWh, Cost: 60.00
+2025-12-26 02:57:06.208 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [ed3d2e19-c45d-46be-895a-7cd378bc278e] settlement completed: COMPLETED -> CLOSED on event SETTLE. Refund: 40.00
+2025-12-26 02:57:06.208 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event SETTLE for order ed3d2e19-c45d-46be-895a-7cd378bc278e: COMPLETED -> CLOSED
+2025-12-26 02:57:06.208 [main] INFO  c.c.o.a.service.ChargingOrderService - Order ed3d2e19-c45d-46be-895a-7cd378bc278e settled. Refund amount: 40.00
+2025-12-26 02:57:36.682 [main] INFO  c.c.order.ChargingOrderServiceTest - Starting ChargingOrderServiceTest using Java 1.8.0_282 on kaiji.local with PID 77094 (started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 02:57:36.683 [main] DEBUG c.c.order.ChargingOrderServiceTest - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 02:57:36.683 [main] INFO  c.c.order.ChargingOrderServiceTest - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 02:57:37.420 [main] INFO  c.c.order.ChargingOrderServiceTest - Started ChargingOrderServiceTest in 0.923 seconds (JVM running for 1.523)
+2025-12-26 02:57:37.591 [main] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: 7d82c074-24d4-4be1-86fc-01125129a940
+2025-12-26 02:57:37.595 [main] INFO  c.c.o.a.service.ChargingOrderService - Created POST_PAID order: ad808760-8091-41f0-91c1-c212aad05dba
+2025-12-26 02:57:37.602 [main] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: 2f363098-eb92-408c-8e88-42583f621123
+2025-12-26 02:57:37.607 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - PrePaid state machine [CHARGING_PREPAID] initialized
+2025-12-26 02:57:37.607 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [2f363098-eb92-408c-8e88-42583f621123] cancelled: CREATED -> CANCELLED on event CANCEL_ORDER
+2025-12-26 02:57:37.607 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event CANCEL_ORDER for order 2f363098-eb92-408c-8e88-42583f621123: CREATED -> CANCELLED
+2025-12-26 02:57:37.607 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 2f363098-eb92-408c-8e88-42583f621123 cancelled
+2025-12-26 02:57:37.610 [main] INFO  c.c.o.a.service.ChargingOrderService - Created POST_PAID order: ee5c3ebe-ddf1-4596-a7b2-65cba20bc61a
+2025-12-26 02:57:37.611 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - PostPaid state machine [CHARGING_POSTPAID] initialized
+2025-12-26 02:57:37.611 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [ee5c3ebe-ddf1-4596-a7b2-65cba20bc61a] cancelled: CREATED -> CANCELLED on event CANCEL_ORDER
+2025-12-26 02:57:37.611 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event CANCEL_ORDER for order ee5c3ebe-ddf1-4596-a7b2-65cba20bc61a: CREATED -> CANCELLED
+2025-12-26 02:57:37.611 [main] INFO  c.c.o.a.service.ChargingOrderService - Order ee5c3ebe-ddf1-4596-a7b2-65cba20bc61a cancelled
+2025-12-26 02:57:37.614 [main] INFO  c.c.o.a.service.ChargingOrderService - Created POST_PAID order: 39b0f7a0-b464-40f9-960f-7b72eb08a0b8
+2025-12-26 02:57:37.614 [main] DEBUG c.c.o.d.strategy.PostPaidStrategy - Checking authorization condition for order: 39b0f7a0-b464-40f9-960f-7b72eb08a0b8
+2025-12-26 02:57:37.614 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [39b0f7a0-b464-40f9-960f-7b72eb08a0b8] authorization completed: CREATED -> AUTHORIZED on event AUTHORIZE
+2025-12-26 02:57:37.614 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event AUTHORIZE for order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8: CREATED -> AUTHORIZED
+2025-12-26 02:57:37.614 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8 authorized
+2025-12-26 02:57:37.615 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [39b0f7a0-b464-40f9-960f-7b72eb08a0b8] charging started: AUTHORIZED -> CHARGING on event START_CHARGING
+2025-12-26 02:57:37.615 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event START_CHARGING for order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8: AUTHORIZED -> CHARGING
+2025-12-26 02:57:37.615 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8 started charging
+2025-12-26 02:57:37.615 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [39b0f7a0-b464-40f9-960f-7b72eb08a0b8] charging finished: CHARGING -> COMPLETED on event FINISH_CHARGING. Amount: 45.8 kWh
+2025-12-26 02:57:37.615 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event FINISH_CHARGING for order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8: CHARGING -> COMPLETED
+2025-12-26 02:57:37.615 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8 finished charging. Amount: 45.8 kWh, Cost: 55.00
+2025-12-26 02:57:37.615 [main] INFO  c.c.o.d.strategy.PostPaidStrategy - [PostPaid] Order [39b0f7a0-b464-40f9-960f-7b72eb08a0b8] deduction completed: COMPLETED -> CLOSED on event DEDUCT. Amount: 55.00
+2025-12-26 02:57:37.615 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_POSTPAID] fired event DEDUCT for order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8: COMPLETED -> CLOSED
+2025-12-26 02:57:37.616 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 39b0f7a0-b464-40f9-960f-7b72eb08a0b8 deducted. Amount: 55.00
+2025-12-26 02:57:59.873 [main] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: 4564f919-d5ca-46e5-87fc-59af75d78ce6
+2025-12-26 02:58:07.009 [main] DEBUG c.c.o.d.strategy.PrePaidStrategy - Checking payment condition for order: 4564f919-d5ca-46e5-87fc-59af75d78ce6
+2025-12-26 02:58:07.053 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [4564f919-d5ca-46e5-87fc-59af75d78ce6] payment completed: CREATED -> PAID on event PAY
+2025-12-26 02:58:07.080 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event PAY for order 4564f919-d5ca-46e5-87fc-59af75d78ce6: CREATED -> PAID
+2025-12-26 02:58:07.103 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 4564f919-d5ca-46e5-87fc-59af75d78ce6 paid with amount: 100.00
+2025-12-26 02:58:09.547 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [4564f919-d5ca-46e5-87fc-59af75d78ce6] charging started: PAID -> CHARGING on event START_CHARGING
+2025-12-26 02:58:09.588 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event START_CHARGING for order 4564f919-d5ca-46e5-87fc-59af75d78ce6: PAID -> CHARGING
+2025-12-26 02:58:09.615 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 4564f919-d5ca-46e5-87fc-59af75d78ce6 started charging
+2025-12-26 02:58:12.151 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [4564f919-d5ca-46e5-87fc-59af75d78ce6] charging finished: CHARGING -> COMPLETED on event FINISH_CHARGING. Amount: 50.5 kWh
+2025-12-26 02:58:12.195 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event FINISH_CHARGING for order 4564f919-d5ca-46e5-87fc-59af75d78ce6: CHARGING -> COMPLETED
+2025-12-26 02:58:12.223 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 4564f919-d5ca-46e5-87fc-59af75d78ce6 finished charging. Amount: 50.5 kWh, Cost: 60.00
+2025-12-26 02:58:16.043 [main] INFO  c.c.o.d.strategy.PrePaidStrategy - [PrePaid] Order [4564f919-d5ca-46e5-87fc-59af75d78ce6] settlement completed: COMPLETED -> CLOSED on event SETTLE. Refund: 40.00
+2025-12-26 02:58:16.086 [main] DEBUG c.c.o.a.service.ChargingOrderService - State machine [CHARGING_PREPAID] fired event SETTLE for order 4564f919-d5ca-46e5-87fc-59af75d78ce6: COMPLETED -> CLOSED
+2025-12-26 02:58:16.113 [main] INFO  c.c.o.a.service.ChargingOrderService - Order 4564f919-d5ca-46e5-87fc-59af75d78ce6 settled. Refund amount: 40.00
+2025-12-26 03:02:16.210 [main] INFO  c.c.o.ChargingOrderSystemApplication - Starting ChargingOrderSystemApplication using Java 1.8.0_282 on kaiji.local with PID 78291 (/Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system/target/classes started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 03:02:16.211 [main] DEBUG c.c.o.ChargingOrderSystemApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 03:02:16.212 [main] INFO  c.c.o.ChargingOrderSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 03:02:16.776 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-26 03:02:16.780 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 03:02:16.782 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 03:02:16.782 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-26 03:02:16.861 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 03:02:16.861 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 606 ms
+2025-12-26 03:02:17.066 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 03:02:17.084 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-26 03:02:17.094 [main] INFO  c.c.o.ChargingOrderSystemApplication - Started ChargingOrderSystemApplication in 1.156 seconds (JVM running for 1.46)
+2025-12-26 03:02:23.316 [main] INFO  c.c.o.ChargingOrderSystemApplication - Starting ChargingOrderSystemApplication using Java 1.8.0_282 on kaiji.local with PID 78898 (/Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system/target/classes started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 03:02:23.317 [main] DEBUG c.c.o.ChargingOrderSystemApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 03:02:23.318 [main] INFO  c.c.o.ChargingOrderSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 03:02:23.856 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-26 03:02:23.861 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 03:02:23.862 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 03:02:23.863 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-26 03:02:23.903 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 03:02:23.903 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 555 ms
+2025-12-26 03:02:24.116 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 03:02:24.121 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2025-12-26 03:02:24.124 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-12-26 03:02:24.125 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-12-26 03:02:24.128 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-12-26 03:02:24.129 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-12-26 03:02:24.135 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-12-26 03:02:24.150 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-12-26 03:02:29.256 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-26 03:02:29.256 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-26 03:02:29.256 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-12-26 03:02:29.282 [http-nio-8080-exec-2] INFO  c.c.o.a.service.ChargingOrderService - Created PRE_PAID order: 8f2ed058-001a-4e5d-9ccc-c77314c11fd1
+2025-12-26 23:38:40.349 [main] INFO  c.c.o.ChargingOrderSystemApplication - Starting ChargingOrderSystemApplication using Java 1.8.0_282 on kaiji.local with PID 88867 (/Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system/target/classes started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 23:38:40.350 [main] DEBUG c.c.o.ChargingOrderSystemApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 23:38:40.351 [main] INFO  c.c.o.ChargingOrderSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 23:38:41.004 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-26 23:38:41.015 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:38:41.020 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 23:38:41.021 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-26 23:38:41.067 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 23:38:41.067 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 675 ms
+2025-12-26 23:38:41.265 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:38:41.281 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-26 23:38:41.288 [main] INFO  c.c.o.ChargingOrderSystemApplication - Started ChargingOrderSystemApplication in 1.212 seconds (JVM running for 1.515)
+2025-12-26 23:40:02.696 [main] INFO  c.c.o.ChargingOrderSystemApplication - Starting ChargingOrderSystemApplication using Java 1.8.0_282 on kaiji.local with PID 89350 (/Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system/target/classes started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 23:40:02.697 [main] DEBUG c.c.o.ChargingOrderSystemApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 23:40:02.698 [main] INFO  c.c.o.ChargingOrderSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 23:40:03.291 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-26 23:40:03.295 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:40:03.297 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 23:40:03.297 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-26 23:40:03.340 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 23:40:03.341 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 605 ms
+2025-12-26 23:40:03.583 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:40:03.598 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-26 23:40:03.606 [main] INFO  c.c.o.ChargingOrderSystemApplication - Started ChargingOrderSystemApplication in 1.169 seconds (JVM running for 1.406)
+2025-12-26 23:42:26.461 [main] INFO  c.c.o.ChargingOrderSystemApplication - Starting ChargingOrderSystemApplication using Java 1.8.0_282 on kaiji.local with PID 89909 (/Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system/target/classes started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 23:42:26.462 [main] DEBUG c.c.o.ChargingOrderSystemApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 23:42:26.462 [main] INFO  c.c.o.ChargingOrderSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 23:42:27.056 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-26 23:42:27.064 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:42:27.065 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 23:42:27.065 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-26 23:42:27.110 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 23:42:27.110 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 608 ms
+2025-12-26 23:42:27.336 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:42:27.350 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-26 23:42:27.359 [main] INFO  c.c.o.ChargingOrderSystemApplication - Started ChargingOrderSystemApplication in 1.24 seconds (JVM running for 1.543)
+2025-12-26 23:42:42.073 [main] INFO  c.c.o.ChargingOrderSystemApplication - Starting ChargingOrderSystemApplication using Java 1.8.0_282 on kaiji.local with PID 90534 (/Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system/target/classes started by zhengshoudong in /Users/zhengshoudong/.gemini/antigravity/scratch/charging-order-system)
+2025-12-26 23:42:42.074 [main] DEBUG c.c.o.ChargingOrderSystemApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-12-26 23:42:42.075 [main] INFO  c.c.o.ChargingOrderSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-26 23:42:42.564 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-12-26 23:42:42.568 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:42:42.570 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 23:42:42.570 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-12-26 23:42:42.613 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 23:42:42.613 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 501 ms
+2025-12-26 23:42:42.888 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 23:42:42.900 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-12-26 23:42:42.910 [main] INFO  c.c.o.ChargingOrderSystemApplication - Started ChargingOrderSystemApplication in 1.074 seconds (JVM running for 1.278)
+2025-12-26 23:45:18.213 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-26 23:45:18.213 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-26 23:45:18.216 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
