@@ -1,0 +1,63 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 拉取代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. 设置 Java 环境 (这里用的是 JDK 17)
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      # 3. Maven 打包 (跳过测试，为了节省时间)
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      # 4. 把 jar 包和 Dockerfile 传到服务器
+      - name: Copy files to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "target/*.jar,Dockerfile"
+          target: "/home/ubuntu/charging-system"
+
+      # 5. SSH 登录服务器并执行 Docker 命令
+      - name: Docker Build & Run
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/ubuntu/charging-system
+            # 停止旧容器
+            sudo docker stop charging-app || true
+            # 删除旧容器
+            sudo docker rm charging-app || true
+            # 删除旧镜像 (防止垃圾堆积)
+            sudo docker rmi charging-app-image || true
+            # 构建新镜像
+            sudo docker build -t charging-app-image .
+            # 启动新容器 (连接 MySQL 和 Redis)
+            # 注意：这里假设你的 MySQL 容器名叫 mysql，Redis 叫 redis
+            sudo docker run -d \
+              --name charging-app \
+              -p 8080:8080 \
+              --link mysql:mysql \
+              --link redis:redis \
+              -e TZ=Asia/Shanghai \
+              charging-app-image
