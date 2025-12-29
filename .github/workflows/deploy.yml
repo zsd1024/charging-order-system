@@ -54,10 +54,10 @@ jobs:
             sudo docker build -t charging-app-image .
             # 启动新容器 (连接 MySQL 和 Redis)
             # 注意：这里假设你的 MySQL 容器名叫 mysql，Redis 叫 redis
+            echo "==== 4. 启动新容器 ===="
             sudo docker run -d \
               --name charging-app \
               -p 8080:8080 \
-              --link mysql:mysql \
-              --link redis:redis \
+              --network charging-net \
               -e TZ=Asia/Shanghai \
               charging-app-image
