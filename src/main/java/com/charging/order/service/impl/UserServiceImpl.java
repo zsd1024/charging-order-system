@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.charging.order.entity.SysUser;
 import com.charging.order.mapper.UserMapper;
 import com.charging.order.service.IUserService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, SysUser> implements IUserService {
     @Override
     public boolean login(String username, String password) {
