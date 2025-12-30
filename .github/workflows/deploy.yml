@@ -11,33 +11,27 @@ jobs:
       - name: SSH Remote Deploy
         uses: appleboy/ssh-action@master
         with:
-          # 1. 这里改成了和你截图一致的名字
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
-          # 2. 这里改成了 key 模式，对应你的 SSH_PRIVATE_KEY
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # ▼▼▼▼ 新增了这一行，允许脚本运行 30 分钟不超时 ▼▼▼▼
+          command_timeout: 30m
           script: |
-            # 进入项目目录
             cd /home/ubuntu/charging-order-system
             
-            # 拉取最新代码
-            echo "==== 开始拉取代码 ===="
+            echo "==== 拉取代码 ===="
             git pull origin main
             
-            # 停止并删除旧容器
             echo "==== 停止旧容器 ===="
             sudo docker stop charging-app || true
             sudo docker rm charging-app || true
-            
-            # 删除旧镜像 (清理空间)
             sudo docker rmi charging-app-image || true
             
-            # 构建新镜像
-            echo "==== 构建新镜像 ===="
+            echo "==== 开始构建 (这一步较慢，请耐心等待) ===="
+            # 注意：第一次构建会很慢，下载完依赖后，下次就快了
             sudo docker build -t charging-app-image .
             
-            # 启动新容器
-            echo "==== 启动新容器 ===="
+            echo "==== 启动容器 ===="
             sudo docker run -d \
               --name charging-app \
               -p 8080:8080 \
